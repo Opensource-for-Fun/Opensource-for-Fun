@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sunnySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1976D2"/>
+      <stop offset="100%" stop-color="#BBDEFB"/>
+    </linearGradient>
+    <linearGradient id="rigiGreen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#43A047"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+
+    <linearGradient id="droneRedReal" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stop-color="#FFCDD2" /> <stop offset="25%" stop-color="#D50000" /> <stop offset="100%" stop-color="#8E0000" /> </linearGradient>
+    <linearGradient id="armMetal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#757575"/>
+        <stop offset="50%" stop-color="#424242"/>
+        <stop offset="100%" stop-color="#212121"/>
+    </linearGradient>
+    <radialGradient id="propBlurReal" cx="50%" cy="50%" r="50%">
+        <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0"/>
+        <stop offset="80%" stop-color="#EEEEEE" stop-opacity="0.4"/>
+        <stop offset="95%" stop-color="#BDBDBD" stop-opacity="0.9"/>
+    </radialGradient>
+
+    <path id="petal" d="M0,0 C12,-18 26,-10 20,0 C26,10 12,18 0,0" fill="#FFC1E3"/>
+    <path id="petalL" d="M0,0 C12,-18 26,-10 20,0 C26,10 12,18 0,0" fill="#FFFFFF" opacity="0.95"/>
+
+    <g id="flower">
+      <use href="#petal" transform="rotate(0)"/>
+      <use href="#petal" transform="rotate(72)"/>
+      <use href="#petal" transform="rotate(144)"/>
+      <use href="#petal" transform="rotate(216)"/>
+      <use href="#petal" transform="rotate(288)"/>
+      <circle r="5" fill="#F48FB1"/>
+      <circle r="3" fill="#FFEB3B" opacity="0.8"/>
+    </g>
+     <g id="flowerL">
+      <use href="#petalL" transform="rotate(36) scale(0.9)"/>
+      <use href="#petalL" transform="rotate(108) scale(0.9)"/>
+      <use href="#petalL" transform="rotate(180) scale(0.9)"/>
+      <use href="#petalL" transform="rotate(252) scale(0.9)"/>
+      <use href="#petalL" transform="rotate(324) scale(0.9)"/>
+      <circle r="5" fill="#F06292"/>
+    </g>
+
+    <g id="bloomCluster">
+        <circle cx="0" cy="0" r="50" fill="#F8BBD0" opacity="0.4" filter="url(#blurDense)"/>
+        <use href="#flower" x="-20" y="-20" transform="scale(1.3)"/>
+        <use href="#flowerL" x="25" y="-15" transform="scale(1.2) rotate(30)"/>
+        <use href="#flower" x="-15" y="25" transform="scale(1.1) rotate(-20)"/>
+        <use href="#flowerL" x="20" y="20" transform="scale(1.4)"/>
+        <use href="#flower" x="0" y="5" transform="scale(1.5) rotate(15)"/>
+        <use href="#flowerL" x="-35" y="5" transform="scale(1) rotate(-45)"/>
+        <use href="#flower" x="35" y="0" transform="scale(1.1) rotate(60)"/>
+    </g>
+
+    <g id="denseBackDrop" opacity="0.7" filter="url(#blurDense)">
+        <use href="#bloomCluster" transform="scale(2)"/>
+        <use href="#bloomCluster" x="80" y="60" transform="scale(1.8) rotate(45)"/>
+        <use href="#bloomCluster" x="-80" y="40" transform="scale(1.8) rotate(-30)"/>
+    </g>
+
+    <filter id="blurDense"> <feGaussianBlur stdDeviation="4" /> </filter>
+    <filter id="sunGlow"> <feGaussianBlur stdDeviation="8" /> </filter>
+  </defs>
+
+  <rect width="1000" height="700" fill="url(#sunnySky)"/>
+  <circle cx="100" cy="100" r="70" fill="#FFF59D" filter="url(#sunGlow)" opacity="0.8"/>
+  <circle cx="100" cy="100" r="35" fill="#FFFFFF"/>
+  <path d="M -100 700 L 300 400 L 700 600 L 1100 350 L 1100 700 Z" fill="url(#rigiGreen)"/>
+
+  <g id="deep-canopy">
+    <use href="#denseBackDrop" x="200" y="100" transform="scale(1.5)"/>
+    <use href="#denseBackDrop" x="500" y="50" transform="scale(1.8)"/>
+    <use href="#denseBackDrop" x="800" y="150" transform="scale(1.6)"/>
+    <use href="#denseBackDrop" x="300" y="300" transform="scale(1.4)"/>
+    <use href="#denseBackDrop" x="700" y="400" transform="scale(1.5)"/>
+    <use href="#denseBackDrop" x="50" y="250" transform="scale(1.7)"/>
+    <use href="#denseBackDrop" x="950" y="300" transform="scale(1.8)"/>
+  </g>
+
+  <g id="foreground-sakura">
+    <path d="M -50 50 Q 200 150 400 80 T 700 120" stroke="#3E2723" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <path d="M 1050 80 Q 850 200 650 150" stroke="#3E2723" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <path d="M 50 650 Q 200 500 350 600" stroke="#3E2723" stroke-width="16" fill="none" stroke-linecap="round"/>
+    
+    <use href="#bloomCluster" x="100" y="80" transform="scale(1.6)"/>
+    <use href="#bloomCluster" x="300" y="120" transform="scale(1.8) rotate(20)"/>
+    <use href="#bloomCluster" x="550" y="80" transform="scale(1.5) rotate(-15)"/>
+    <use href="#bloomCluster" x="800" y="150" transform="scale(1.9)"/>
+    <use href="#bloomCluster" x="950" y="80" transform="scale(1.7) rotate(30)"/>
+    <use href="#bloomCluster" x="200" y="550" transform="scale(1.6) rotate(-10)"/>
+    <use href="#bloomCluster" x="700" y="200" transform="scale(1.4)"/>
+    <use href="#flowerL" x="450" y="180" transform="scale(1.5)"/>
+    <use href="#flower" x="650" y="250" transform="scale(1.3)"/>
+    <use href="#flowerL" x="250" y="200" transform="scale(1.4)"/>
+  </g>
+
+  <g id="petals-rain" opacity="0.9">
+    <use href="#petalL" x="300" y="200" transform="rotate(45) scale(0.8)"/>
+    <use href="#petal" x="500" y="300" transform="rotate(15) scale(1)"/>
+    <use href="#petalL" x="700" y="250" transform="rotate(80) scale(0.7)"/>
+    <use href="#petal" x="400" y="500" transform="rotate(120) scale(0.9)"/>
+    <use href="#petalL" x="600" y="450" transform="rotate(30) scale(1.1)"/>
+    <use href="#petal" x="200" y="400" transform="rotate(160) scale(0.8)"/>
+    <use href="#petalL" x="800" y="350" transform="rotate(200) scale(1)"/>
+  </g>
+
+  <g id="hero-drone-realistic" transform="translate(500, 360) scale(2.3) rotate(-5)">
+    
+    <g fill="url(#armMetal)" stroke="#212121" stroke-width="0.5">
+        <path d="M -12 -8 L -70 -45 L -82 -38 L -18 8 Z" /> <path d="M 12 -8 L 70 -45 L 82 -38 L 18 8 Z" />   <path d="M -12 8 L -70 45 L -82 38 L -18 -8 Z" />  <path d="M 12 8 L 70 45 L 82 38 L 18 -8 Z" />    </g>
+    <g fill="#BDBDBD">
+        <circle cx="-15" cy="-8" r="1.5"/><circle cx="15" cy="-8" r="1.5"/>
+        <circle cx="-15" cy="8" r="1.5"/><circle cx="15" cy="8" r="1.5"/>
+    </g>
+
+    <g fill="#37474F">
+        <circle cx="-76" cy="-41" r="9"/><circle cx="76" cy="-41" r="9"/>
+        <circle cx="-76" cy="41" r="9"/><circle cx="76" cy="41" r="9"/>
+    </g>
+
+    <g opacity="0.95">
+        <ellipse cx="-76" cy="-41" rx="42" ry="10" fill="url(#propBlurReal)"/>
+        <ellipse cx="76" cy="-41" rx="42" ry="10" fill="url(#propBlurReal)"/>
+        <ellipse cx="-76" cy="41" rx="42" ry="10" fill="url(#propBlurReal)"/>
+        <ellipse cx="76" cy="41" rx="42" ry="10" fill="url(#propBlurReal)"/>
+    </g>
+    <g fill="#ECEFF1">
+        <circle cx="-76" cy="-41" r="3"/><circle cx="76" cy="-41" r="3"/>
+        <circle cx="-76" cy="41" r="3"/><circle cx="76" cy="41" r="3"/>
+    </g>
+
+    <path d="M -32 -18 C -48 -5, -48 5, -32 20 L 32 20 C 48 5, 48 -5, 32 -18 Z" fill="#8E0000" transform="translate(0, 2)"/>
+    <path d="M -35 -20 C -50 -5, -50 5, -35 18 L 35 18 C 50 5, 50 -5, 35 -20 Z" fill="url(#droneRedReal)" stroke="#B71C1C" stroke-width="0.8"/>
+    
+    <ellipse cx="0" cy="-2" rx="20" ry="12" fill="#263238"/> <g stroke="#EF9A9A" stroke-width="0.5">
+        <line x1="-18" y1="5" x2="-8" y2="5"/>
+        <line x1="8" y1="5" x2="18" y2="5"/>
+        <line x1="-18" y1="8" x2="-8" y2="8"/>
+        <line x1="8" y1="8" x2="18" y2="8"/>
+    </g>
+    <rect x="-38" y="-5" width="5" height="5" rx="1" fill="#FFEB3B" filter="url(#sunGlow)"/>
+    <rect x="33" y="-5" width="5" height="5" rx="1" fill="#00E676" filter="url(#sunGlow)"/>
+
+    <g transform="translate(0, 24)">
+        <path d="M -12 -2 L -8 4 L 8 4 L 12 -2" fill="none" stroke="#546E7A" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="-10" y="4" width="20" height="16" rx="3" fill="#37474F"/> <circle cx="0" cy="12" r="7" fill="#212121" stroke="#78909C" stroke-width="1"/>
+        <circle cx="0" cy="12" r="5" fill="#0277BD"/> <circle cx="2" cy="10" r="2.5" fill="#FFFFFF" opacity="0.6"/> <circle cx="-2" cy="13" r="1.5" fill="#E1F5FE" opacity="0.4"/> </g>
+  </g>
+</svg>
